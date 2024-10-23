@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+
+{% block title %}Blog{% endblock title %}
+
+{% block content %}
+<dl>
+    <dt>Posts</dt>
+    {% for p in posts %}
+    <dd>
+        {{ p.title }}
+    </dd>
+    {% endfor %}
+</dl>
+
+<hr />
+<dl>
+    <dt>Tags</dt>
+    {% for t in tags %}
+    <dd>
+        {{ t.name }}
+    </dd>
+    {% endfor %}
+</dl>
+{% endblock content %}
